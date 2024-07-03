@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { loginThunk } from "../../redux/auth/operations.js";
 
-export const LoginForm = () => {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const handleSubmit = (values) => {
     console.log(values);
@@ -67,3 +67,4 @@ export const LoginForm = () => {
     </div>
   );
 };
+export default LoginForm;

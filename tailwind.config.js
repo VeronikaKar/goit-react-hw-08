@@ -1,14 +1,8 @@
-import { defineConfig } from "tailwindcss";
-import daisyui from "daisyui";
-
-export default defineConfig({
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: false,
+//  @type {import('tailwindcss').Config}
+module.exports = {
+  content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
-  plugins: [daisyui],
-});
+  plugins: [],
+};

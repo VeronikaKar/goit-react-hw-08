@@ -3,15 +3,17 @@ import { ContactItem } from "../ContactItem/ContactItem";
 import { InfinitySpin } from "react-loader-spinner";
 import selectFilteredContacts, {
   selectIsLoading,
+  selectIsError,
 } from "../../redux/contacts/selectors.js";
 
 export const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);
   const loading = useSelector(selectIsLoading);
-  // const error = useSelector(selectIsError);
+  const error = useSelector(selectIsError);
 
   return (
     <>
+      {error && <p>Error: {error.message}</p>}
       <ul className="divide-y divide-gray-200 mx-auto max-w-md">
         {filteredContacts.map((contact) => (
           <ContactItem key={contact.id} contact={contact} />

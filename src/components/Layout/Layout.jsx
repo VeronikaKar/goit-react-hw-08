@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import AppBar from "../AppBar/AppBar";
 
-export const Layout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div className="max-w-screen-md mx-auto px-4">
       <AppBar />
@@ -9,3 +9,4 @@ export const Layout = ({ children }) => {
     </div>
   );
 };
+export default Layout;

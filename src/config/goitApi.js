@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const goitApi = axios.create({
-  baseURL: "https://task-manager-api.goit.global/",
+  baseURL: "https://connections-api.herokuapp.com",
 });
 
 export const setToken = (token) => {
