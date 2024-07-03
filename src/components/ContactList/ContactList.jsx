@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
 import { ContactItem } from "../ContactItem/ContactItem";
 import { InfinitySpin } from "react-loader-spinner";
-import {
-  selectFilteredContacts,
+import selectFilteredContacts, {
   selectIsLoading,
-} from "../../redux/contactsSlice";
+} from "../../redux/contacts/selectors.js";
 
 export const ContactList = () => {
   const filteredContacts = useSelector(selectFilteredContacts);

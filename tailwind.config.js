@@ -1,10 +1,14 @@
+import { defineConfig } from "tailwindcss";
+import daisyui from "daisyui";
 
-export const purge = ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'];
-export const darkMode = false;
-export const theme = {
-  extend: {},
-};
-export const variants = {
-  extend: {},
-};
-export const plugins = [];
+export default defineConfig({
+  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
+  darkMode: false,
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [daisyui],
+});

@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import s from "./SearchBar.module.css";
-import { changeFilter } from "../../redux/filtersSlice";
+import { changeFilter } from "../../redux/filters/slice.js";
 import { useState } from "react";
 
 export const SearchBar = () => {
