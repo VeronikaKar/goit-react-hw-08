@@ -55,5 +55,3 @@ const slice = createSlice({
 });
 
 export const authReducer = slice.reducer;
-export const { selectIsLoggedIn, selectIsError, selectUser, selectIsRefresh } =
-  slice.selectors;

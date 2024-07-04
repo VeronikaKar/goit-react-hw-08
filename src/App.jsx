@@ -10,9 +10,10 @@ import { easyLazy } from "../src/helpers/easyLazy.js";
 import Layout from "./components/Layout/Layout";
 import RestrictedRoute from "./components/RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import RegisterPage from "./pages/RegisterPage/RegisterPage.jsx";
 
 const HomePage = easyLazy("HomePage");
-const RegisterPage = easyLazy("RegisterPage");
+
 const LoginPage = easyLazy("LoginPage");
 const ContactsPage = easyLazy("ContactsPage");
 
@@ -50,11 +51,11 @@ const App = () => {
         </div>
       }
     >
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
           <Route
-            path="/register"
+            path="register"
             element={
               <RestrictedRoute
                 redirectTo="/contacts"
@@ -63,7 +64,7 @@ const App = () => {
             }
           />
           <Route
-            path="/login"
+            path="login"
             element={
               <RestrictedRoute
                 redirectTo="/contacts"
@@ -72,13 +73,13 @@ const App = () => {
             }
           />
           <Route
-            path="/contacts"
+            path="contacts"
             element={
               <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
             }
           />
-        </Routes>
-      </Layout>
+        </Route>
+      </Routes>
     </Suspense>
   );
 };

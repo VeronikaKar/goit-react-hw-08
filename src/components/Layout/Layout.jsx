@@ -1,11 +1,13 @@
 import { Suspense } from "react";
 import AppBar from "../AppBar/AppBar";
+import { Outlet } from "react-router-dom";
 
-const Layout = ({ children }) => {
+const Layout = () => {
   return (
     <div className="max-w-screen-md mx-auto px-4">
       <AppBar />
-      <Suspense fallback={null}>{children}</Suspense>
+
+      <Outlet />
     </div>
   );
 };
