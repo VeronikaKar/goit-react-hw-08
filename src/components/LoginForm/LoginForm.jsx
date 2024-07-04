@@ -19,10 +19,7 @@ const LoginForm = () => {
         <div className="text-center lg:text-left">
           <h1 className="text-5xl font-bold">Login now!</h1>
           <p className="py-6">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
-            totam optio. Doloribus consequatur labore atque, quas aut, aperiam
-            eos molestias, vel blanditiis soluta repellendus. Quibusdam
-            molestias similique quasi quas obcaecati.
+            Log in to access exclusive features and benefits
           </p>
         </div>
         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

@@ -6,8 +6,9 @@ const Layout = () => {
   return (
     <div className="max-w-screen-md mx-auto px-4">
       <AppBar />
-
-      <Outlet />
+      <Suspense fallback={null}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

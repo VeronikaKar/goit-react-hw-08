@@ -15,7 +15,7 @@ const initialState = {
   isLoggedIn: false,
   isLoading: false,
   isError: false,
-  isRefresh: false,
+  isRefreshing: false,
 };
 
 const slice = createSlice({
@@ -40,16 +40,16 @@ const slice = createSlice({
         return initialState;
       })
       .addCase(refreshThunk.pending, (state) => {
-        state.isRefresh = true;
+        state.isRefreshing = true;
       })
       .addCase(refreshThunk.rejected, (state) => {
-        state.isRefresh = false;
+        state.isRefreshing = false;
       })
       .addCase(refreshThunk.fulfilled, (state, action) => {
         state.user.name = action.payload.name;
         state.user.email = action.payload.email;
         state.isLoggedIn = true;
-        state.isRefresh = false;
+        state.isRefreshing = false;
       });
   },
 });
