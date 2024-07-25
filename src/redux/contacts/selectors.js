@@ -5,12 +5,13 @@ export const selectContacts = (state) => state.contacts.items || [];
 
 export const selectIsLoading = (state) => state.contacts.loading;
 export const selectIsError = (state) => state.contacts.error;
-export const selectCurrentContact = (state) => state.contacts.currentContact;
-export const selectContactDelete = (state) => state.contacts.contactDelete;
+
 const selectFilteredContacts = createSelector(
   [selectContacts, selectNameFilter],
   (items, name) => {
-    if (!items) return [];
+    if (!items) return []; // Handle case where items is undefined or null
+
+    // Example of creating a new filtered array:
     const filteredItems = items.filter(
       (item) =>
         item &&
@@ -18,7 +19,7 @@ const selectFilteredContacts = createSelector(
         item.name.toLowerCase().includes(name.toLowerCase())
     );
 
-    return filteredItems;
+    return filteredItems; // This could cause the warning if filteredItems reference changes unnecessarily
   }
 );
 

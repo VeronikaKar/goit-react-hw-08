@@ -35,14 +35,14 @@ export const deleteContact = createAsyncThunk(
     }
   }
 );
-export const editContactThunk = createAsyncThunk(
-  "contacts/editContact",
-  async ({ id, ...contact }, thunkAPI) => {
-    try {
-      const { data } = await goitApi.patch(`contacts/${todo.id}`);
-      return data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const updateContact = createAsyncThunk(
+//   "contacts/putContact",
+//   async ({ id, updatedContact }, thunkAPI) => {
+//     try {
+//       const response = await axios.put(`/contacts/${id}`, updatedContact);
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
